@@ -2,12 +2,12 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://placehold.co/32x32/4f46e5/ffffff/png?text=D" />
+    <link rel="icon" type="image/png" href="./icons/192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
     <title>企业数据可视化</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -44,7 +44,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
+          // 使用相对路径 ./sw.js 以适配各种托管环境和预览沙盒
+          navigator.serviceWorker.register('./sw.js')
             .then((registration) => {
               console.log('SW registered with scope:', registration.scope);
             })
@@ -55,6 +56,6 @@
       }
     </script>
     
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>

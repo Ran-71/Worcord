@@ -1,11 +1,15 @@
 
-const CACHE_NAME = 'dataviz-cache-v2';
+const CACHE_NAME = 'dataviz-cache-v4';
 
 // 仅缓存最基础的入口文件，避免缓存不存在的源文件导致报错
+// 增加图标缓存，确保离线时 PWA 图标正常
+// 使用相对路径 ./ 适配不同部署环境
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json',
+  './icons/192.png',
+  './icons/512.png'
 ];
 
 self.addEventListener('install', (event) => {
