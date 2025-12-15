@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#f8fafc" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="企业级数据可视化看板 PWA" />
     <link rel="manifest" href="./manifest.json" />
     <title>企业数据可视化</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,12 +28,13 @@
   <script type="importmap">
 {
   "imports": {
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "recharts": "https://esm.sh/recharts@^3.5.1",
-    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react": "https://esm.sh/react@^19.2.3",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
@@ -40,11 +42,11 @@
   <body class="bg-slate-50 text-slate-900 overflow-hidden fixed inset-0">
     <div id="root" class="h-full w-full flex flex-col"></div>
     
-    <!-- 独立注册 Service Worker，确保打包工具能检测到 -->
+    <!-- 独立注册 Service Worker -->
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // 使用相对路径 ./sw.js 以适配各种托管环境和预览沙盒
+          // 在生产环境构建后，sw.js 应该位于根目录
           navigator.serviceWorker.register('./sw.js')
             .then((registration) => {
               console.log('SW registered with scope:', registration.scope);
@@ -56,6 +58,7 @@
       }
     </script>
     
+    <!-- Vite 入口文件 -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
