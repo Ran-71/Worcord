@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://picsum.photos/32/32" />
+    <link rel="icon" type="image/svg+xml" href="https://placehold.co/32x32/4f46e5/ffffff/png?text=D" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -39,6 +39,22 @@
 </head>
   <body class="bg-slate-50 text-slate-900 overflow-hidden fixed inset-0">
     <div id="root" class="h-full w-full flex flex-col"></div>
+    
+    <!-- 独立注册 Service Worker，确保打包工具能检测到 -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered with scope:', registration.scope);
+            })
+            .catch((err) => {
+              console.error('SW registration failed:', err);
+            });
+        });
+      }
+    </script>
+    
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

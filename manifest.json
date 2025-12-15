@@ -3,12 +3,12 @@
   "name": "企业数据可视化",
   "icons": [
     {
-      "src": "/icons/192.png",
+      "src": "https://placehold.co/192x192/4f46e5/ffffff/png?text=DataViz",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icons/512.png",
+      "src": "https://placehold.co/512x512/4f46e5/ffffff/png?text=DataViz",
       "type": "image/png",
       "sizes": "512x512"
     }
