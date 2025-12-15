@@ -3,12 +3,12 @@
   "name": "企业数据可视化",
   "icons": [
     {
-      "src": "https://icons/192",
+      "src": "https://picsum.photos/192/192",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://icons/512",
+      "src": "https://picsum.photos/512/512",
       "type": "image/png",
       "sizes": "512x512"
     }
