@@ -1,0 +1,5 @@
+{
+  "name": "DataViz Pro Android",
+  "description": "A responsive PWA for visualizing enterprise data across different modes (Personnel, Project, Shift Leader, Enterprise) with real-time filtering and financial metrics.",
+  "requestFramePermissions": []
+}
