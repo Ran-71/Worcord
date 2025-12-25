@@ -17,7 +17,7 @@ const DEPARTMENTS = ['总经办', '工程部', '财务部', '市场部', '人力
 
 // Define which metrics are available for each mode
 export const MODE_METRICS_MAP: Record<ViewMode, MetricType[]> = {
-  [ViewMode.PERSONNEL]: [MetricType.PRICING, MetricType.PROJECT, MetricType.TEAM_LEADER, MetricType.MEASUREMENT, MetricType.UNIT_PRICE, MetricType.AMOUNT, MetricType.DATE, MetricType.REMARKS],
+  [ViewMode.PERSONNEL]: [MetricType.WORK_HOURS, MetricType.INCOME, MetricType.MANAGER],
   [ViewMode.PROJECT]: [MetricType.PROGRESS, MetricType.INCOME, MetricType.EXPENSE, MetricType.PROFIT_RATE, MetricType.MANAGER],
   [ViewMode.LEADER]: [MetricType.SAFETY_SCORE, MetricType.WORK_HOURS, MetricType.MANAGER],
   [ViewMode.ENTERPRISE]: [MetricType.INCOME, MetricType.EXPENSE, MetricType.PROFIT_RATE],

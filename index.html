@@ -2,13 +2,11 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./icons/192.png" />
+    <link rel="icon" type="image/svg+xml" href="https://picsum.photos/32/32" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="description" content="企业级数据可视化看板 PWA" />
-    <link rel="manifest" href="./manifest.json" />
     <title>企业数据可视化</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -28,37 +26,16 @@
   <script type="importmap">
 {
   "imports": {
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
 </head>
   <body class="bg-slate-50 text-slate-900 overflow-hidden fixed inset-0">
     <div id="root" class="h-full w-full flex flex-col"></div>
-    
-    <!-- 独立注册 Service Worker -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          // 在生产环境构建后，sw.js 应该位于根目录
-          navigator.serviceWorker.register('./sw.js')
-            .then((registration) => {
-              console.log('SW registered with scope:', registration.scope);
-            })
-            .catch((err) => {
-              console.error('SW registration failed:', err);
-            });
-        });
-      }
-    </script>
-    
-    <!-- Vite 入口文件 -->
-    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
